@@ -1,10 +1,10 @@
 program <- c()
 runtime <- vector(mode="numeric", length=0)
 
-for(f in list.files(path = "./Data"))
+for(f in list.files(path = "./Data/Raw"))
 {
   #print(f)
-  df <- read.table(paste("./Data/",f, sep=""), quote="\"")
+  df <- read.table(paste("./Data/Raw",f, sep="/"), quote="\"")
   s <- 0
   for(i in seq(2, nrow(df), by=1))
   {
@@ -18,5 +18,5 @@ for(f in list.files(path = "./Data"))
 
 runtime_table <- data.frame(program, runtime)
 par(bg="grey95")
-barplot(height = runtime_table$runtime, names.arg = runtime_table$program, cex.names = 0.6, horiz = TRUE, las = 1, col = "orange", xlim=c(0,100), main="Time Comparison for Loop Variations", xlab="Time (milliseconds)")
+barplot(height = runtime_table$runtime, names.arg = runtime_table$program, cex.names = 0.6, horiz = TRUE, las = 1, col = "orange", xlim=c(0,100), main="Time Comparison for Loop Variations", xlab="Time (microseconds)")
 View(runtime_table)

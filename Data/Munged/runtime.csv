@@ -1,0 +1,7 @@
+"","program","runtime"
+"1","loop",92.4142394821974
+"2","loop_noinline",92.4142394821974
+"3","while",89.1132686084165
+"4","while_noinline",89.1132686084165
+"5","while_noinline_noop",89.1132686084165
+"6","while_noop",89.1132686084165
